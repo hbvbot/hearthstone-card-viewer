@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const parser = require('body-parser');
-const request = require('request');
 const unirest = require('unirest');
 
 app.use(parser.json());
@@ -9,8 +8,15 @@ app.use(parser.urlencoded({extended:true}));
 app.use(express.static(__dirname + '/client'));
 
 app.post('/hs', (req, res) => {
+  console.log(req.body)
   const className = req.body.name;
-  unirest.get(`https://omgvamp-hearthstone-v1.p.mashape.com/cards/classes/${className}`)
+  const cost = req.body.cost;
+  let url = `https://omgvamp-hearthstone-v1.p.mashape.com/cards/classes/${className}`;
+  if (cost) {
+    url = `https://omgvamp-hearthstone-v1.p.mashape.com/cards/classes/${className}?cost=${cost}`
+  }
+
+  unirest.get(url)
   .header("X-Mashape-Key", "TOzbCURHclmsh3eQk2GzysYqJAgAp1vv3Rrjsng6HvlziVGSyN")
   .end(function (result) {
     console.log(result.status);

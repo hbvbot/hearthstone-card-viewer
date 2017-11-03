@@ -1,7 +1,7 @@
 angular.module('app')
   .component('list', {
     bindings: {
-      cards: '<'
+      cards: '<',
     },
     template:
     `
