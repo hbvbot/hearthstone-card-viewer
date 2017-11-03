@@ -2,6 +2,10 @@ angular.module('app', [])
   .component('main', {
     controller: function($http) {
       this.cards = [];
+      this.img = 'img';
+      this.toggle = () => {
+        this.img = this.img === 'img' ? 'imgGold': 'img';
+      }
       this.post = (className, cost) => {
         console.log(className)
         console.log(cost)
@@ -46,7 +50,8 @@ angular.module('app', [])
       <option value="9">9</option>
       <option value="10">10</option>
     </select>
+    <button ng-click="$ctrl.toggle()">GOLD</button>
     <br><br>
-    <list cards="$ctrl.cards" cost="data.cost"></list>
+    <list cards="$ctrl.cards" img="$ctrl.img" cost="data.cost"></list>
     </div>`,
   })
