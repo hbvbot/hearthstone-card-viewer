@@ -4,6 +4,7 @@ angular.module('app', [])
       this.cards = [];
       this.img = 'img';
       this.toggle = () => {
+        console.log(this.cards)
         this.img = this.img === 'img' ? 'imgGold': 'img';
       }
       this.post = (className, cost) => {
@@ -18,7 +19,7 @@ angular.module('app', [])
           console.log(result)
           this.cards = [];
           for (let i = 0; i < result.data.length; i++) {
-            if(result.data[i].cost) {
+            if(result.data[i].cost && result.data[i].type !== "Hero Power") {
               this.cards.push(result.data[i]);
             }
           }

@@ -9,7 +9,7 @@ angular.module('app')
     template:
     `
     <span ng-repeat="card in $ctrl.cards">
-      <img ng-src="{{card[$ctrl.img]}}">
+      <img id="myImg" ng-src="{{card[$ctrl.img]}}">
     </span>
     `
   })
