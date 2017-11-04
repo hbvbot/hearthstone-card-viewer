@@ -4,12 +4,17 @@ angular.module('app')
       cards: '<',
       img: '<'
     },
-    controller: function() {
-    },
     template:
     `
-    <span ng-repeat="card in $ctrl.cards">
-      <img id="myImg" ng-src="{{card[$ctrl.img]}}">
-    </span>
+    <div class="flip-container" ontouchstart="this.classList.toggle('hover');" ng-repeat="card in $ctrl.cards">
+    	<div class="flipper">
+    		<div class="front">
+    			<img ng-src="{{card[$ctrl.img]}}">
+    		</div>
+    		<div class="back">
+    			<img ng-src="http://wow.zamimg.com/images/hearthstone/backs/original/Card_Back_Default.png">
+    		</div>
+    	</div>
+    </div>
     `
   })
