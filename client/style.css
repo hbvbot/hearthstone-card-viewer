@@ -2,8 +2,17 @@ html {
   text-align: center;
 }
 
+@font-face {
+    font-family: Wow;
+    src: url("./font.otf") format("opentype");
+}
+
+h1 {
+  margin: 0;
+}
+
 body {
-  background-image: url(http://zyzixun.net/data/out/127/3927611-parchment-wallpapers.jpg);
+  background-image: url(./background.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -11,7 +20,7 @@ body {
 
 .title {
   font-size: 35px;
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-family: Wow
 }
 
 /* entire container, keeps perspective */
@@ -59,10 +68,8 @@ body {
 }
 
 .btn {
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  color: #ffffff;
+  font-family: Wow
   font-size: 15px;
   background: #d9c334;
-  padding: 10px 15px 10px 15px;
-  text-decoration: none;
+  padding: 10px 12px 10px 12px;
 }

@@ -26,8 +26,8 @@ angular.module('app', [])
         })
       };
     },
-    template: `<div><h1 class="title">Hearthstone Cards</h1>
-    <select name="class" ng-model="data.class" ng-change="$ctrl.post(data.class)">
+    template: `<h1 class="title">Hearthstone Card Viewer</h1>
+    <select name="class" ng-model="data.class" ng-change="$ctrl.post(data.class)" class="selectpicker">
       <option value="" selected disabled hidden>Class</option>
       <option value="Druid">Druid</option>
       <option value="Hunter">Hunter</option>
@@ -53,8 +53,7 @@ angular.module('app', [])
       <option value="9">9</option>
       <option value="10">10</option>
     </select>
-    <button class="btn" ng-click="$ctrl.toggle()">GOLD</button>
+    <button class="btn" ng-click="$ctrl.toggle()" style="font-face: Wow">View Golden</button>
     <br>
-    <list cards="$ctrl.cards" img="$ctrl.img" cost="data.cost"></list>
-    </div>`,
+    <list cards="$ctrl.cards" img="$ctrl.img" cost="data.cost"></list>`,
   })
