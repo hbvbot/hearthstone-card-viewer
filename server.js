@@ -27,15 +27,8 @@ app.post('/hs', (req, res) => {
   .header("X-Mashape-Key", "Ad9LEibOO2msh901n5efHO2ALivap1XFop2jsnS61Cn3OWH6Sf")
   .end(function (result) {
     res.send(result.body);
-    for (let i = 0; i < result.body.length; i++)
-    if (result.body[i].name && result.body[i].flavor) {
-      const values = { name: result.body[i].name, description: result.body[i].flavor }
-      db.query('INSERT INTO cards SET ?', values, (err, result) => {
-        if (err) throw err;
-      })
-    }
   });
-})
+});
 
 app.listen(3000, () => {
   console.log('server listening on port: 3000');
