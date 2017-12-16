@@ -13,7 +13,7 @@ angular.module('app', [])
         console.log('REQ SENT')
         $http({
           method: 'POST',
-          url: 'http://localhost:3000/hs',
+          url: '/hs',
           data: { name: className, cost: cost}
         }).then((result) => {
           console.log(result)
