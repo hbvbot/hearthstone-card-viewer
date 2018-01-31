@@ -7,7 +7,7 @@ angular.module('app')
     template:
     `
     <span ng-repeat="card in $ctrl.cards">
-      <img class="resize" ng-src="{{card[$ctrl.img]}}">
+      <img class="resize" ng-src="{{card[$ctrl.img]}}" onerror="this.style.display='none'">
     </span>
     `
   })
