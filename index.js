@@ -8,7 +8,6 @@ app.use(parser.urlencoded({extended:true}));
 app.use(express.static(__dirname + '/client'));
 
 app.post('/hs', (req, res) => {
-  console.log(req.body)
   const className = req.body.name;
   const cost = req.body.cost;
   let url = `https://omgvamp-hearthstone-v1.p.mashape.com/cards/classes/${className}`;

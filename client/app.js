@@ -4,19 +4,14 @@ angular.module('app', [])
       this.cards = [];
       this.img = 'img';
       this.toggle = () => {
-        console.log(this.cards)
         this.img = this.img === 'img' ? 'imgGold': 'img';
       }
       this.post = (className, cost) => {
-        console.log(className)
-        console.log(cost)
-        console.log('REQ SENT')
         $http({
           method: 'POST',
           url: '/hs',
           data: { name: className, cost: cost}
         }).then((result) => {
-          console.log(result)
           this.cards = [];
           for (let i = 0; i < result.data.length; i++) {
             if(result.data[i].cost && result.data[i].type !== "Hero Power") {
