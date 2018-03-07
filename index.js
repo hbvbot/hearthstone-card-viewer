@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const parser = require('body-parser');
 const unirest = require('unirest');
+const fetch = require('node-fetch');
 
 app.use(parser.json());
 app.use(parser.urlencoded({extended:true}));
@@ -18,6 +19,13 @@ app.post('/hs', (req, res) => {
   unirest.get(url)
   .header("X-Mashape-Key", "Ad9LEibOO2msh901n5efHO2ALivap1XFop2jsnS61Cn3OWH6Sf")
   .end(function (result) {
+    const cards = [];
+
+    for (let i = 0; i < result.body.length; i++) {
+      fetch(result.body[i].img)
+        .then(res => console.log(res.status)
+      )};
+    console.log(cards)
     res.send(result.body);
   });
 });

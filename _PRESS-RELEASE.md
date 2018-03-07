@@ -38,7 +38,7 @@ Once the project moves into development, the press release can be used as a touc
   'Select the class of which cards you want to see and you can also filter by card cost.'
 
 ## Customer Quote ##
-  'Great app! Brendan is a fuckin genius. 10/10 would use.' -Alexander Brawley
+  'Great app! Brendan is a genius. 10/10 would use.' -Alexander Brawley
 
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
